@@ -77,7 +77,7 @@ namespace Energistics.Etp
         /// <returns>The <see cref="IEtpClient"/></returns>
         public static IEtpClient CreateClient(string uri, string application, string version, string etpSubProtocol)
         {
-            return CreateClient(Settings.Default.DefaultWebSocketType, uri, application, version, etpSubProtocol, EmptyHeaders);
+            return CreateClient(WebSocketType.Native, uri, application, version, etpSubProtocol, EmptyHeaders);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Energistics.Etp
         /// <returns>The <see cref="IEtpClient"/></returns>
         public static IEtpClient CreateClient(string uri, string application, string version, string etpSubProtocol, IDictionary<string, string> headers)
         {
-            return CreateClient(Settings.Default.DefaultWebSocketType, uri, application, version, etpSubProtocol, headers);
+            return CreateClient(WebSocketType.Native, uri, application, version, etpSubProtocol, headers);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Energistics.Etp
         /// <returns>The <see cref="IEtpSelfHostedWebServer"/></returns>
         public static IEtpSelfHostedWebServer CreateSelfHostedWebServer(int port, string application, string version)
         {
-            return CreateSelfHostedWebServer(Settings.Default.DefaultWebSocketType, port, application, version);
+            return CreateSelfHostedWebServer(WebSocketType.Native, port, application, version);
         }
 
         /// <summary>
